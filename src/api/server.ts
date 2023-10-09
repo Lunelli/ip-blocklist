@@ -1,3 +1,4 @@
+import cors from 'cors'
 import express, { NextFunction, Request, Response } from 'express';
 import { apiErrorHandler } from './api';
 import { registerRoutes } from './routers/blocklistRouter';
@@ -5,6 +6,7 @@ import { isNotNullable } from '../shared/common';
 
 export async function initExpressApp() {
     const app = express();
+    app.use(cors());
     app.use(express.json());
     app.use(ignoreFavicon);
     app.use('/', await registerRoutes());

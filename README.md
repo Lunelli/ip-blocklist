@@ -2,6 +2,13 @@
 
 A simple, cached wrapper for the [IPsum repo](https://github.com/stamparm/ipsum) list.
 
+## Endpoint
+
+A single `GET` endpoint is available, returning `true` if the informed IP is listed in the block list.
+```
+localhost:3000/:ip
+```
+
 ## Running the application
 
 ### Docker
